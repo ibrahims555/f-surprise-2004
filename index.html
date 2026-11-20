@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Just for you">
+  <meta property="og:description" content="Something for you.">
+  <title>Falak</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<noscript>
+  <p style="position:relative;z-index:9;padding:2rem;text-align:center">JavaScript needs to be turned on for this surprise.</p>
+</noscript>
+
+<!-- Open screen -->
+<div id="gate">
+  <div class="gate-panel" id="ready">
+    <p class="gate-line">Falak, this is for you.</p>
+    <button class="orb" id="openBtn" type="button"><span>Open</span></button>
+  </div>
+</div>
+
+<main id="story" hidden>
+
+  <!-- Opening -->
+  <section id="hero" aria-label="Happy birthday Falak">
+    <p class="hb" data-split style="--d:.5s;--step:.07s">Happy Birthday</p>
+    <h1 class="name" data-split style="--d:2.1s;--step:.2s">Falak</h1>
+    <span class="rule"></span>
+    <p class="sub">My Shahzaadi</p>
+    <p class="cue">scroll down</p>
+  </section>
+
+  <!-- Our story -->
+  <section class="sec" id="kahani">
+    <h2>Our story</h2>
+    <ol class="tl">
+      <li>
+        <h3>Our first meeting</h3>
+        <p class="where">Cafe Boogie</p>
+        <p>The first time we met, just the two of us. You looked into my eyes, I looked into yours, and my heart knew we were made for each other.</p>
+      </li>
+      <li>
+        <h3>Again and again, side by side</h3>
+        <p class="where">In the malls</p>
+        <p>Walking the same paths over and over. We had no destination. I only needed to be with you.</p>
+      </li>
+      <li>
+        <h3>Our Nikkah</h3>
+        <p class="where">11 September</p>
+        <p>Since that day, every little moment has become a memory I want to keep forever.</p>
+      </li>
+      <li>
+        <h3>Fighting and making up</h3>
+        <p class="where">Even today, every day</p>
+        <p>We have sulked, and we have made up. We are not perfect, and that is exactly what makes our story real.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- A new message -->
+  <section class="sec wish" id="dua">
+    <h2>What I never say enough</h2>
+
+    <div class="stanza">
+      <p class="ln">Happy Birthday, Falak.</p>
+      <p class="ln">Another year of you in this world, and this time you are my wife.</p>
+      <p class="ln">I still can't get over how lucky that sounds.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">May Allah keep your smile safe, your heart light, and your days full of the peace you give so freely to everyone around you.</p>
+      <p class="ln">May every dua you whisper be answered in the best way.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">I think about Cafe Boogie more than you know.</p>
+      <p class="ln">Just the two of us at a table, and somehow it already felt like I had known you forever.</p>
+      <p class="ln">Somewhere between your first look and my first smile, I think I already knew.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">Love, for me, lives in the small things.</p>
+      <p class="ln quote">Your “did you eat?”</p>
+      <p class="ln quote">Your “text me when you reach.”</p>
+      <p class="ln quote">Walking beside you through the mall, again and again, never wanting it to end.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">I used to guard my heart like a locked door.</p>
+      <p class="ln">You didn't knock loudly or try to break it down. You just stayed, patiently, until I opened it myself.</p>
+      <p class="ln">Thank you for that. Thank you for every time you chose me, even when I was hard to choose.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">We will still sulk, and we will still make up, and I would not trade a single one of those moments.</p>
+    </div>
+
+    <div class="stanza">
+      <p class="ln">You are my peace, Janaan. My prayer I never knew I was making. My home.</p>
+      <p class="ln"><strong>I love you more than this page can hold.</strong></p>
+    </div>
+
+    <p class="ln closing">11 September made you my wife. Every day since has made you more of my home.</p>
+  </section>
+
+  <!-- Photos: filled by the script, stays hidden if there are no photos -->
+  <section class="sec" id="lamhe" hidden>
+    <h2>Our moments</h2>
+    <p class="note">Tap any photo and the colour comes back.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- Letter -->
+  <section class="sec letter" id="khat">
+    <h2>To my beautiful wife, my forever love</h2>
+    <p class="ln">Some people come into our lives and make everything more beautiful. You came into mine and made it feel like home.</p>
+    <p class="ln">Since our Nikkah on 11 September, every little moment has become a memory I wish to keep forever. From our endless laughter and silly arguments to those sweet moments of making up, every part of our journey is special to me.</p>
+    <p class="ln">We are not perfect, and that is what makes our story so real. We are learning, growing, changing, and understanding each other a little more every day. You have changed so many things in me, and I hope I have brought beautiful changes into your life too.</p>
+    <p class="ln">I want to be your biggest supporter, your safest place, your favourite person, and the one who never stops choosing you. I want us to grow old together, collect countless memories, celebrate every little happiness, and hold each other's hands through every chapter of life.</p>
+    <p class="ln">Happy Birthday, my Shahzaadi. You are my today, my tomorrow, and my forever. I love you endlessly.</p>
+  </section>
+
+  <!-- Finale -->
+  <section id="finale" class="finale">
+    <h2 class="fin-title">Happy Birthday, Falak.</h2>
+    <p class="fin-days" id="daysLine">It has been <span id="days">0</span> days since 11 September, and every day I choose you again.</p>
+    <button class="wishbtn" id="wishBtn" type="button">Make a wish</button>
+    <div class="after" id="after" aria-hidden="true">
+      <p class="after-wish">My wish: that you keep smiling always, and that I stay by your side forever.</p>
+      <p class="after-love">I love you endlessly.</p>
+      <p class="after-sign">Always yours</p>
+    </div>
+  </section>
+
+</main>
+
+<button class="snd off" id="snd" type="button" hidden aria-label="Music on or off">♪</button>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo" aria-hidden="true">
+  <button class="lb-x" id="lbClose" type="button" aria-label="Close">×</button>
+  <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav next" id="lbNext" type="button" aria-label="Next photo">›</button>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
