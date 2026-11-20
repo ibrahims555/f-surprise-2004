@@ -1,10 +1,21 @@
-# Falak ke liye surprise website: poora guide
+# Falak ke liye birthday surprise: poora guide
 
-Is mein 12 baje wala lock nahi hai. Link jab bhi khule, seedha "Open" button aata hai. Aap jab chahein link bhej sakte hain.
+Link jab bhi khule, seedha "Open Your Surprise" wali screen aati hai. Koi 12 baje wala lock nahi, aap jab chahein link bhej dein.
 
-Yeh sab kaam phone ke browser se bhi ho jata hai, laptop par aur bhi aasan hai. Phone par ho to browser mein "Desktop site" on kar lein, GitHub ke buttons saaf nazar aayenge.
+Yeh sab kaam phone ke browser se bhi ho jata hai, laptop par aur bhi aasan hai. Phone par GitHub ke buttons chhote lagen to browser mein "Desktop site" on kar lein.
 
----
+## Files kaun si hain
+
+Yeh 4 files GitHub par upload karni hain:
+
+- `index.html` (website ka dhancha)
+- `style.css` (rang aur design)
+- `script.js` (animations aur interactions)
+- `content.js` (saare alfaaz yahin hain, jo badalna ho yahan se badlein)
+
+Saath mein aapki photos (`1.jpg` se `5.jpg`) aur chahein to `music.mp3`.
+
+Pehle wali website ki `config.js` ab istemal nahi hoti. Purani repository mein upload kar rahe hain to bas yeh 4 nayi files usi naam se dobara upload kar dein, wo purani wali ko badal dengi. `config.js` rehne dein ya delete kar dein, koi farq nahi.
 
 ## Step 1. GitHub account (agar nahi hai)
 
@@ -13,73 +24,68 @@ Yeh sab kaam phone ke browser se bhi ho jata hai, laptop par aur bhi aasan hai. 
 
 ## Step 2. Nayi repository banayein
 
-1. Upar daayen taraf **+** par click karein, phir **New repository**.
-2. **Repository name** mein kuch aisa likhein jo koi guess na kar sake, misal: `f-surprise-2311`.
+1. Upar daayen taraf **+** dabayein, phir **New repository**.
+2. **Repository name** mein kuch aisa likhein jo koi guess na kar sake, misal `f-surprise-2311`.
 3. **Public** select rehne dein (free website ke liye zaroori hai).
-4. Neeche **Create repository** dabayein.
+4. **Create repository** dabayein.
 
 ## Step 3. Files upload karein
 
-1. Nayi khali repository ke page par **uploading an existing file** wala link hoga. Us par click karein.
-2. In 4 files ko drag karein (ya **choose your files** se select karein):
-   - `index.html`
-   - `style.css`
-   - `script.js`
-   - `config.js`
-3. Photos bhi isi waqt upload kar sakte hain (neeche "Photos" wala hissa dekhein).
-4. Neeche **Commit changes** dabayein. Upload complete.
+1. Khali repository ke page par **uploading an existing file** par click karein.
+2. Chaaron files (`index.html`, `style.css`, `script.js`, `content.js`) drag karein ya **choose your files** se chunein.
+3. Photos aur music bhi isi waqt chun sakte hain (neeche dekhein).
+4. Neeche **Commit changes** dabayein.
 
 ## Step 4. Website on karein (GitHub Pages)
 
-1. Repository mein upar **Settings** par jayein.
-2. Left side menu mein **Pages** par click karein.
-3. **Build and deployment** ke neeche **Source** mein *Deploy from a branch* chunein.
-4. **Branch** mein `main` aur saath wala folder `/ (root)` chunein, phir **Save**.
-5. 1-2 minute ruk kar page refresh karein. Upar ek link aa jayega:
+1. Repository mein upar **Settings** dabayein.
+2. Left menu mein **Pages**.
+3. **Source** mein *Deploy from a branch* chunein. **Branch** mein `main` aur folder `/ (root)`, phir **Save**.
+4. 1-2 minute baad page refresh karein, upar link aa jayega:
    `https://AAPKA-USERNAME.github.io/REPOSITORY-NAAM/`
-6. Is link ko khud kholein, "Open" dabayein aur poori website dekh lein.
-
-Yehi link wife ko bhejna hai, jab dil chahe.
-
----
+5. Link khud kholein aur poori website ek baar dekh lein. Phir wahi link wife ko bhej dein.
 
 ## Photos kaise dalni hain
 
-Do tareeqe hain, jo aasan lage wo use karein.
+Website mein 5 photo cards hain. Jab tak photo na ho, wahan ek khoobsurat placeholder ("Your photo here") dikhta hai, kuch toota hua nahi lagta.
 
-**Tareeqa 1 (sab se aasan): naam 1, 2, 3**
+1. Apni 5 photos ke naam `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `5.jpg` rakhein (chhote letters mein).
+2. Repository mein **Add file → Upload files** se upload karein, phir **Commit changes**.
+3. 1-2 minute baad website mein nazar aa jayengi. Na aayen to page ko hard refresh karein ya private tab mein kholein.
 
-- Photos ke naam `1.jpg`, `2.jpg`, `3.jpg` ... kar dein (chhote letters, zyada se zyada 24).
-- `.jpg`, `.jpeg`, `.png`, `.webp` chal jayenge.
-- Repository mein **Add file → Upload files** se upload karein, phir **Commit changes**.
-- Website khud dhoond leti hai, code mein kuch nahi badalna.
+Dhyan dein:
 
-**Tareeqa 2: asli naam ke saath**
+- Photo ki extension bilkul wahi honi chahiye jo `content.js` mein likhi hai (`1.jpg`). Aapki photos `.png` ya `.jpeg` hon to `content.js` mein us card ka `photo: "1.jpg"` badal kar `photo: "1.png"` kar dein.
+- Photo card se zyada ya kam karni ho to `content.js` mein `cards` ke andar ek `{ ... }` hissa copy ya delete kar dein.
+- iPhone ki `.heic` photos nahi chalengi. Photo ko WhatsApp se khud ko bhej kar download kar lein, wo JPG ban jati hai aur size bhi chhota ho jata hai. Har photo 500 KB se kam ho to phone par bhi tez khulegi.
 
-- Photos ko unke asli naam se upload karein (misal `IMG_2031.jpg`).
-- Phir repository mein `config.js` kholein, pencil icon (Edit) dabayein, aur `photoFiles` mein naam likh dein:
-  `photoFiles: ["IMG_2031.jpg", "IMG_2045.jpg"],`
-- **Commit changes** dabayein.
-- Naam bilkul wahi likhein jaise file ka hai, capital aur small letters ka bhi farq hota hai.
+## Music
 
-Zaroori baatein:
+Website mein music ka button (upar daayen kone mein) hamesha nazar aata hai, aur music tab tak shuru nahi hota jab tak wife "Open Your Surprise" ya music button na dabaye.
 
-- iPhone ki `.heic` photos nahi chalengi. Photo ko WhatsApp se khud ko bhej kar download kar lein, wo JPG ban jati hai aur size bhi chhota ho jata hai (har photo 1 MB se kam ho to behtar).
-- Upload ke 1-2 minute baad website mein nazar aayengi. Na aayen to page ko hard refresh karein ya private tab mein kholein.
-- Photos na hon to gallery wala hissa khud chhup jata hai.
-- Photo ke neeche naam likhna ho to `config.js` mein `captions` mein likh dein.
-- Website par photo kala safed dikhti hai, us par tap karne se rang wapas aa jata hai.
+- `music.mp3` naam ki file upload kar dein to wahi chalegi.
+- File na ho to ek halki si khud ban jane wali dhun chalti hai (soft pad aur bell notes), is liye button hamesha kaam karta hai.
 
-## Music (optional)
+## Alfaaz badalna
 
-Ek mp3 file `music.mp3` naam se usi tarah upload kar dein. Wife jab "Open" dabayegi, music halki awaz se shuru ho jayega, aur upar daayen kone mein band karne ka button hoga. File na ho to music button nazar nahi aata.
-
-## Baad mein koi lafz badalna ho
-
-1. Repository mein `index.html` par click karein.
+1. Repository mein `content.js` par click karein.
 2. Pencil icon (Edit) dabayein.
-3. Text badal kar **Commit changes** dabayein.
-4. 1-2 minute baad website update ho jayegi.
+3. Sirf inverted commas (" ") ke andar ka text badlein. Commas aur brackets na hatayein.
+4. **Commit changes** dabayein. 1-2 minute baad website update ho jayegi.
+
+`content.js` mein hi birthday ki tareekh, Nikkah ki tareekh (din ginne ke liye), candles ki tadaad aur letter ke paragraphs hain.
+
+## Kya kya hai website mein
+
+1. Taaron wali intro aur ek raaz bhara paigham, phir "Open Your Surprise" button.
+2. Button dabate hi taare tezi se guzarte hain (warp) aur subah jaisa asman khulta hai.
+3. "Happy Birthday Falak" ka animated greeting.
+4. Memory cards: swipe karein ya tap karke palat kar caption parhein.
+5. Birthday cake: har candle par tap karke bujhayein, phir confetti.
+6. Mohar (seal) wala lifafa, aur typewriter se likha hua letter (letter par tap karein to poora ek saath khul jata hai).
+7. Aakhri tara: usse chhoo kar chhupa hua paigham kholein, phir "Experience it again" se dobara shuru.
+
+Phone ki settings mein "reduce motion" on ho to animations bahut halki ho jati hain aur sab kuch phir bhi kaam karta hai.
 
 ## Dhyan rakhein
 
